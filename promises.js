@@ -1,6 +1,5 @@
-// Use the functions eatBreakfast, eatLunch, eatDinner, and eatDessert to eat your meals in the traditional order.
-// Hint: Each function returns a promise
 
+//using promises
 eatBreakfast().then(function(){
     return eatLunch()
   }).then(function(){
@@ -11,12 +10,12 @@ eatBreakfast().then(function(){
     console.log("all meals eaten")
   })
   
-  // Do NOT modify below this line until instructed to do so.
+  //functions with timeouts set to prevent function completion in the sequential order they are called.
   function eatBreakfast() {
     return new Promise(function(resolve, reject) {
       console.log("The eatBreakfast function started executing.")
       setTimeout(function() {
-        addText("You just ate breakfast.")
+        console.log("You just ate breakfast.")
         resolve()
       }, 800)
     })
@@ -26,7 +25,7 @@ eatBreakfast().then(function(){
     return new Promise(function(resolve, reject) {
       console.log("The eatLunch function started executing.")
       setTimeout(function() {
-        addText("You just ate lunch.")
+        console.log("You just ate lunch.")
         resolve()
       }, 300)
     })
@@ -36,7 +35,7 @@ eatBreakfast().then(function(){
     return new Promise(function(resolve, reject) {
       console.log("The eatDinner function started executing.")
       setTimeout(function() {
-        addText("You just ate dinner.")
+        console.log("You just ate dinner.")
         resolve()
       }, 600)
     })
@@ -46,13 +45,8 @@ eatBreakfast().then(function(){
     return new Promise(function(resolve, reject) {
       console.log("The eatDessert function started executing.")
       setTimeout(function() {
-        addText("You just ate dessert.")
+        console.log("You just ate dessert.")
         resolve()
       }, 40)
     })
-  }
-  
-  const textDiv = document.getElementById("text")
-  function addText(x) {
-    textDiv.insertAdjacentHTML('beforeend', `<p>${x}</p>`)
   }

@@ -1,20 +1,18 @@
-// Use the functions eatBreakfast, eatLunch, eatDinner, and eatDessert to eat your meals in the traditional order.
 
 //using callbacks
 eatBreakfast(function(){
     eatLunch(function(){
         eatDinner(function(){
-        eatDessert()
+            eatDessert()
         })
     })
 })
   
-
-// Do NOT modify below this line until instructed to do so.
+//functions with timeouts set to prevent function completion in the sequential order they are called.
 function eatBreakfast(callback) {
 console.log("The eatBreakfast function started executing.")
 setTimeout(function() {
-    addText("You just ate breakfast.")
+    console.log("You just ate breakfast.")
     if (callback) callback()
 }, 800)
 }
@@ -22,7 +20,7 @@ setTimeout(function() {
 function eatLunch(callback) {
 console.log("The eatLunch function started executing.")
 setTimeout(function() {
-    addText("You just ate lunch.")
+    console.log("You just ate lunch.")
     if (callback) callback()
 }, 300)
 }
@@ -30,7 +28,7 @@ setTimeout(function() {
 function eatDinner(callback) {
 console.log("The eatDinner function started executing.")
 setTimeout(function() {
-    addText("You just ate dinner.")
+    console.log("You just ate dinner.")
     if (callback) callback()
 }, 600)
 }
@@ -38,12 +36,7 @@ setTimeout(function() {
 function eatDessert(callback) {
 console.log("The eatDessert function started executing.")
 setTimeout(function() {
-    addText("You just ate dessert.")
+    console.log("You just ate dessert.")
     if (callback) callback()
 }, 40)
-}
-
-const textDiv = document.getElementById("text")
-function addText(x) {
-textDiv.insertAdjacentHTML('beforeend', `<p>${x}</p>`)
 }
