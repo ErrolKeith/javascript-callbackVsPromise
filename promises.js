@@ -1,14 +1,6 @@
 
 //using promises
-eatBreakfast().then(function(){
-    return eatLunch()
-  }).then(function(){
-    return eatDinner()
-  }).then(function(){
-    return eatDessert()
-  }).then(function(){
-    console.log("all meals eaten")
-  })
+eatBreakfast().then(()=>{return eatLunch()}).then(()=>{return eatDinner()}).then(()=>{return eatDessert()}).then(()=>{console.log("all meals eaten")})
   
   //functions with timeouts set to prevent function completion in the sequential order they are called.
   function eatBreakfast() {
